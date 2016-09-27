@@ -48,6 +48,4 @@ node default {
     path => '/usr/bin:/usr/local/bin',
     creates => '/etc/motd',
   }
-
-  }
 }
