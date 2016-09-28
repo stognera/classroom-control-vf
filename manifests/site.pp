@@ -45,4 +45,6 @@ node default {
   notify { "Hello, my name is ${::hostname}": }
   #include users
   include skeleton
+  if $::virtual != 'physical' {
+  notify { "stdlib::capitalize${::virtual}" } 
 }
