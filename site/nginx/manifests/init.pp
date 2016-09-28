@@ -29,6 +29,7 @@ class nginx {
     ensure    => running,
     enable    => true,
     subscribe => File['/etc/nginx/nginx.conf',
-                   '/etc/nginx/conf.d/default.conf'],
+                   '/etc/nginx/conf.d/default.conf'
+                 ],
   }
 }
