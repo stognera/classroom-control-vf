@@ -45,7 +45,9 @@ node default {
   notify { "Hello, my name is ${::hostname}": }
   #include users
   include skeleton
+
   if $::virtual != 'physical' {
-  notify { "capitalize${::virtual}" }
+    $vmname = capitalize($::virtual)
+    notify { "This is a ${vmname} virtual machine.": 
   }
 }
