@@ -18,7 +18,6 @@ class nginx {
     file { '/var/www/index.html':
     ensure  => file,
     source  => 'puppet:///modules/nginx/index.html',
-    require => Package['nginx'],
   }
   
     file { '/var/www/':
@@ -29,10 +28,8 @@ class nginx {
   service { 'nginx':
     ensure    => running,
     enable    => true,
-    subscribe => [
-                 File['/etc/nginx/nginx.conf'],
-                 File['/var/www/index.html'],
-                 File['/etc/nginx/conf.d/default.conf'],
+    subscribe => File['/etc/nginx/nginx.conf',
+                   '/etc/nginx/conf.d/default.conf',
                  ],
   }
 }
