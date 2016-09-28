@@ -29,10 +29,10 @@ class nginx {
   service { 'nginx':
     ensure    => running,
     enable    => true,
-    subscribe => File[
-                   '/etc/nginx/nginx.conf',
-                   '/var/www/index.html',
-                   '/etc/nginx/conf.d/default.conf',
+    subscribe => [
+                 File['/etc/nginx/nginx.conf'],
+                 File['/var/www/index.html'],
+                 File['/etc/nginx/conf.d/default.conf'],
                  ],
   }
 }
