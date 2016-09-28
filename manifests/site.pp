@@ -46,5 +46,6 @@ node default {
   #include users
   include skeleton
   if $::virtual != 'physical' {
-  notify { "stdlib::capitalize${::virtual}" } 
+  notify { "${stdlib::capitalize}${::virtual}" }
+  }
 }
