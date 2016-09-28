@@ -20,6 +20,11 @@ class nginx {
     source  => 'puppet:///modules/nginx/index.html',
     require => Package['nginx'],
   }
+  
+    file { '/var/www/':
+    ensure  => directory,
+    require => Package['nginx'],
+  }
 
   service { 'nginx':
     ensure    => running,
