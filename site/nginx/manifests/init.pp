@@ -15,7 +15,7 @@ class nginx {
     require => Package['nginx'],
   }
 
-  service { 'memcached':
+  service { 'nginx':
     ensure    => nginx,
     enable    => true,
     subscribe => [
