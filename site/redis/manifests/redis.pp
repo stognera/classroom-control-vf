@@ -1,5 +1,4 @@
-
-class site::redis {
+class redis {
   include redis
   include limits
 }
