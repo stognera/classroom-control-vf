@@ -1,6 +1,6 @@
 class profile::apache { 
-  $docroot = '/var/www/html'
-  $port = '8080'
+  $docroot = hiera(apache::docroot)
+  $port = hiera(apache::port)
 
   class { ::apache:
     mpm_module    => 'prefork',
