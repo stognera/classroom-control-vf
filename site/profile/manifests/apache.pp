@@ -3,7 +3,7 @@ class profile::apache {
   $port = '8080'
 
   class { ::apache:
-    mpm_module    => 'prefork'
+    mpm_module    => 'prefork',
     default_vhost => 'false'
   }
   class {'::apache::mod::php': }
