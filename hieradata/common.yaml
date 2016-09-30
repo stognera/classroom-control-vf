@@ -11,4 +11,3 @@ wordpress::installdir: '/var/www/html'
 wordpress::dbpassword: 'sdskjj93$*$kjs'
 wordpress::user: 'wordpress'
 
- $strongpassword = hiera(mysql::rootpassword)
