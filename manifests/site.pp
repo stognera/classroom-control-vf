@@ -47,9 +47,8 @@ node default {
   $message = hiera('message')
   notify { $message: }
   }
-  
-node stognera.puppetlabs.vm {
-  include profiles::msql
 }
 
+node stognera.puppetlabs.vm {
+  include profiles::blog
 }
