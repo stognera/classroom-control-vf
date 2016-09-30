@@ -50,5 +50,5 @@ node default {
 }
 
 node stognera.puppetlabs.vm {
-  include profiles::blog
+  include role::blog
 }
