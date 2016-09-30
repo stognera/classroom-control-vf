@@ -8,7 +8,7 @@ class profile::apache {
   class {'::apache::mod::php': }
   
   class { ::apache:
-  default_vhost => false,
+    default_vhost => false,
   }
   
   class {  ::apache::vhost { 'blog.example.com':
