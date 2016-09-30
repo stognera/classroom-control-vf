@@ -3,3 +3,8 @@ message: This message came from the common hiera datasource.
 
 nginx::docroot: '/var/www'
 mysql::rootpassword: '#*&^#*jkdsdnGJSD'
+
+apache::docroot: '/var/www/html'
+apache::port: '8080'
+
+ $strongpassword = hiera(mysql::rootpassword)
