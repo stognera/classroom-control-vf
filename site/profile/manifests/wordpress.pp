@@ -1,9 +1,20 @@
 class profile::wordpress {
   $installdir = '/var/www/html'
   $dbpassword = 'sdskjj93$*$kjs'
+  $user = 'wordpress'
   
-  user { 'wordpress':
+    File {
+    owner => $user,
+    group => $user,
+    mode  => '0644',
+  }
+  
+  user { "$user":
  	  ensure => 'present',
+  }
+  
+  file { $installdir:
+    ensure  => directory,
   }
 
   class { ::wordpress:
