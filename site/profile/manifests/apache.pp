@@ -7,7 +7,7 @@ class profile::apache {
     default_vhost => false,
   }
   
-  ::apache::mod::proxy
+  class { ::apache::mod::proxy }
 
   ::apache::vhost { 'blog.example.com':
     port    => "$port",
