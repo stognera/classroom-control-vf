@@ -6,7 +6,8 @@ class profile::apache {
     mpm_module    => 'prefork',
     default_vhost => false,
   }
-  class {'::apache::mod::php': }
+  
+  ::apache::mod::php
 
   ::apache::vhost { 'blog.example.com':
     port    => "$port",
