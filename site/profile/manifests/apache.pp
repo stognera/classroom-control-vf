@@ -1,6 +1,6 @@
 class profile::apache { 
-  $docroot = hiera(apache::docroot)
-  $port = hiera(apache::port)
+  $docroot = hiera('apache::docroot')
+  $port = hiera('apache::port')
 
   class { ::apache:
     mpm_module    => 'prefork',
@@ -10,8 +10,8 @@ class profile::apache {
   include apache::mod::php 
 
   ::apache::vhost { 'blog.example.com':
-    port    => "$port",
-    docroot => "$docroot",
+    port    => $port,
+    docroot => $docroot,
     }
 }
 
