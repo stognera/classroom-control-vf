@@ -4,7 +4,7 @@ class profile::apache {
 
   class { ::apache:
     mpm_module    => 'prefork',
-    default_vhost => 'false'
+    default_vhost => false,
   }
   class {'::apache::mod::php': }
 
