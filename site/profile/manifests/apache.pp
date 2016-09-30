@@ -7,8 +7,13 @@ class profile::apache {
   }
   class {'::apache::mod::php': }
   
-  apache::vhost { 'blog.example.com':
+  class { ::apache:
+  default_vhost => false,
+  }
+  
+  class {  ::apache::vhost { 'blog.example.com':
     port    => "$port",
     docroot => "$docroot",
+    }
   }
 }
