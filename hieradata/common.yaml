@@ -7,4 +7,8 @@ mysql::rootpassword: '#*&^#*jkdsdnGJSD'
 apache::docroot: '/var/www/html'
 apache::port: '8080'
 
+wordpress::installdir: '/var/www/html'
+wordpress::dbpassword: 'sdskjj93$*$kjs'
+wordpress::user: 'wordpress'
+
  $strongpassword = hiera(mysql::rootpassword)
