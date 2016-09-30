@@ -2,7 +2,7 @@ class profile::wordpress {
 
   $installdir = hiera(wordpress::installdir)
   $dbpassword = hiera(wordpress::dbpassword)
-  $user = heira(wordpress::user)
+  $user = hiera(wordpress::user)
   
     File {
     owner => $user,
