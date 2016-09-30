@@ -11,9 +11,8 @@ class profile::apache {
     default_vhost => false,
   }
   
-  class {  ::apache::vhost { 'blog.example.com':
+  ::apache::vhost { 'blog.example.com':
     port    => "$port",
     docroot => "$docroot",
     }
-  }
 }
