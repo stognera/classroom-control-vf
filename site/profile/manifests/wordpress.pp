@@ -1,17 +1,17 @@
 class profile::wordpress {
 
-  $installdir = hiera(wordpress::installdir)
-  $dbpassword = hiera(wordpress::dbpassword)
-  $user = hiera(wordpress::user)
+  $installdir = hiera('wordpress::installdir')
+  $dbpassword = hiera('wordpress::dbpassword')
+  $user = hiera('wordpress::user')
   
-    File {
+  File {
     owner => $user,
     group => $user,
     mode  => '0644',
   }
   
   user { "$user":
- 	  ensure => 'present',
+ 	  ensure => present,
   }
   
   file { $installdir:
@@ -19,10 +19,10 @@ class profile::wordpress {
   }
 
   class { ::wordpress:
-    install_dir => "$installdir",
+    install_dir => $installdir,
     wp_owner    => 'wordpress',
     wp_group    => 'wordpress',
     db_user     => 'wordpress',
-    db_password => "$dbpassword",
+    db_password => $dbpassword,
   }
 }
