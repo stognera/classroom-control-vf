@@ -1,11 +1,14 @@
 class profile::apache { 
+  $docroot = '/var/www/html'
+  $port = '8080'
+
   class { ::apache:
     mpm_module => 'prefork'
   }
   class {'::apache::mod::php': }
   
-  class { '::apache::vhost blog.example.com':
-    port    => '8080',
-    docroot => '/var/www/html',
+  apache::vhost { 'blog.example.com':
+    port    => "$port",
+    docroot => "$docroot",
   }
 }
